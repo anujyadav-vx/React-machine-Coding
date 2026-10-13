@@ -1,16 +1,28 @@
+import { useState } from "react";
+
 import Counter from "./pages/Counter";
 import "./App.css";
 
 function App() {
+  const [activeApp, setActiveApp] = useState("counter");
+
   return (
     <div className="app">
-      <nav className="navbar">
+      <header className="navbar">
         <h2>React Machine Coding</h2>
-      </nav>
+      </header>
       <div className="layout">
-        <main className="workspace"></main>
+        <main className="workspace">
+          {activeApp === "counter" && <Counter />}
+        </main>
+
         <aside className="sidebar">
-          <Counter />
+          <button
+            className={activeApp === "counter" ? "active" : ""}
+            onClick={() => setActiveApp("counter")}
+          >
+            Count App
+          </button>
         </aside>
       </div>
     </div>
