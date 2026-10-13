@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="app">
       <header className="navbar">
-        <h2>React Machine Coding</h2>
+        <h2 className="nav-title">REACT.JS MACHINE CODING</h2>
       </header>
       <div className="layout">
         <main className="workspace">
