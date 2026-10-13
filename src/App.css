@@ -1,8 +1,15 @@
+@media (min-width: 1024px) {
+  .app {
+    width: 90%;
+    flex-direction: row;
+  }
+}
+
 .app {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .layout {
