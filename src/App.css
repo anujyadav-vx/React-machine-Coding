@@ -244,3 +244,23 @@
   border-radius: 12px;
   background: white;
 }
+
+.login-title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.login-email {
+  text-align: center;
+}
+
+.login-password {
+  text-align: center;
+}
+.login-showPassword {
+  border-radius: 30%;
+  text-align: center;
+  font-weight: bold;
+  border-color: black;
+}

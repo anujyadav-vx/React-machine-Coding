@@ -23,9 +23,9 @@ export default function Login() {
   }
   return (
     <div className="login-app">
-      <h2>Login Form</h2>
+      <h2 className="login-title">Login Form</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="login-email">
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -35,7 +35,7 @@ export default function Login() {
             onChange={(e) => setEmail(e.target.value)}
           />
         </div>
-        <div>
+        <div className="login-password">
           <label htmlFor="password">Password</label>
           <input
             type={showPassword ? "text" : "password"}
@@ -44,12 +44,18 @@ export default function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="button" onClick={() => setShowPassword(!showPassword)}>
+          <button
+            className="login-showPassword"
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+          >
             {showPassword ? "hide" : "show"}
           </button>
         </div>
         {error && <p>{error}</p>}
-        <button type="submit">Login</button>
+        <button className="login-btn" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );
