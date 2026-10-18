@@ -12,6 +12,13 @@ export default function Login() {
       setError("Fill the required field");
       return;
     }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setError("");
+    alert("Form validation successful");
   }
   return (
     <div className="login-app">
