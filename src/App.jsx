@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import Counter from "./pages/Counter";
 import ToDo from "./pages/ToDo";
+import Login from "./pages/Login";
+
 import "./App.css";
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
         <main className="workspace">
           {activeApp === "counter" && <Counter />}
           {activeApp === "todo" && <ToDo />}
+          {activeApp === "login" && <Login />}
         </main>
 
         <aside className="sidebar">
@@ -31,6 +34,13 @@ function App() {
             onClick={() => setActiveApp("todo")}
           >
             ToDo List
+          </button>
+
+          <button
+            className={activeApp === "login" ? "active" : ""}
+            onClick={() => setActiveApp("login")}
+          >
+            Login
           </button>
         </aside>
       </div>
