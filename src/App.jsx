@@ -38,7 +38,10 @@ function App() {
             ToDo List
           </button>
 
-          <button className={activeApp === "register" ? "active" : ""}>
+          <button
+            className={activeApp === "register" ? "active" : ""}
+            onClick={() => setActiveApp("register")}
+          >
             Register
           </button>
 
