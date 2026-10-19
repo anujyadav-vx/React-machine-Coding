@@ -1,12 +1,33 @@
-import { use, useState } from "react";
+import { useState } from "react";
 
 export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (!name.trim() || !email.trim() || !password.trim()) {
+      setError("Required fields cannot be empty");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(name)) {
+      setError("please enter name");
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Please enter valid email");
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(password)) {
+      setError("please enter correct email");
+    }
+
+    setError("");
+    alert("registration successful");
   }
 
   return (
@@ -44,6 +65,7 @@ export default function Register() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        {error && <p>{error}</p>}
         <button type="submit">Register</button>
       </form>
     </div>
