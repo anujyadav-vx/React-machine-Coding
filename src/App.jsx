@@ -4,6 +4,7 @@ import Counter from "./pages/Counter";
 import ToDo from "./pages/ToDo";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import SearchFilter from "./pages/SearchFilter";
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
           {activeApp === "todo" && <ToDo />}
           {activeApp === "register" && <Register />}
           {activeApp === "login" && <Login />}
+          {activeApp === "searchFilter" && <SearchFilter />}
         </main>
 
         <aside className="sidebar">
@@ -50,6 +52,13 @@ function App() {
             onClick={() => setActiveApp("login")}
           >
             Login
+          </button>
+
+          <button
+            className={activeApp === "searchFilter" ? "active" : ""}
+            onClick={() => setActiveApp("searchFilter")}
+          >
+            Search Filter
           </button>
         </aside>
       </div>

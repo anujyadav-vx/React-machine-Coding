@@ -5,6 +5,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -31,7 +32,7 @@ export default function Register() {
   }
 
   return (
-    <div>
+    <div className="register-app">
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -58,12 +59,15 @@ export default function Register() {
         <div>
           <label htmlFor="password">Password</label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             id="password"
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <button type="button" onClick={() => setShowPassword(!showPassword)}>
+            {showPassword ? "hide" : "show"}
+          </button>
         </div>
         {error && <p>{error}</p>}
         <button type="submit">Register</button>
