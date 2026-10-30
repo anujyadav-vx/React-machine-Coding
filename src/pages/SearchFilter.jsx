@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const name = ["anuj", "aryan", "sudhir", "karan", "prem", "rohit", "hi"];
+const name = ["anuj", "aryan", "sudhir", "karan", "prem"];
 
 export default function SearchFilter() {
   const [search, setSearch] = useState("");
